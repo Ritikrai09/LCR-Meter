@@ -1108,7 +1108,7 @@ function framing(){
                document.querySelector('.A1').style.display = 'block';
       document.querySelector('.actual').value = parseFloat(qactual.toFixed(3));
       document.querySelector('.measure').value = parseFloat(qmeasure.toFixed(3));
-    },100);
+    });
 
     var induceL = document.querySelector('.co1');
     document.querySelector('.co3').innerHTML='';
@@ -1121,7 +1121,6 @@ function framing(){
       return false;
     
 } 
-
 
 
 if ( conf == -300 && selected.classList.contains('resist') == true ) {
