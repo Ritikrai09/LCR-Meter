@@ -1017,15 +1017,15 @@
    
    	 <div class='resistance'>
        <img class='resist' src='images/resistance.svg'>
-      <label for='number'>(Range limit 0-99&#8486)</label><input type='number' class='res1 input1' name='number' min='0' max='99' placeholder='Enter value'>
+      <label for='number'>(Range limit 0-99&#8486)</label><input type='number' class='res1 input1' name='number' min='0' max='99' style='color: black;' placeholder='Enter value'>
    	  </div>
       <div class='l-C'>
        <img class='induce' src='images/inductor.svg'>
-        <label for='number'>(Range limit 0-2000H)</label><input type='number' class='res1 input2' name='number' min='0' max='99' placeholder='Enter value'>
+        <label for='number'>(Range limit 0-2000H)</label><input type='number' class='res1 input2' name='number' min='0' max='99'  style='color: black;' placeholder='Enter value'>
       </div>
       <div class='capacitor' style='border:none'>
          	<img class='capacite' src='images/capacitor.svg'>
-       <label for='number'>(Range limit 0-2000F)</label><input type='number' class='res1 input3' name='number' min='0' max='99' placeholder='Enter value'>
+       <label for='number'>(Range limit 0-2000F)</label><input type='number' class='res1 input3' name='number' min='0' max='99'  style='color: black;' placeholder='Enter value'>
        </div>
 
         <input type='reset' value='reset' onclick='deletion();' class="revert">
@@ -1144,7 +1144,7 @@ function framing(){
     document.querySelector('.co3').innerHTML='';
               
               induceL.innerHTML='To Measure 1 < 1H <br> e g. 100mH & Quality Factor';
-               document.querySelector('.co2').innerHTML='To measure L > 1H ';
+               document.querySelector('.co2').innerHTML='To measure L > 1H & Quality Factor e g. 1H';
          document.querySelector('.negative').style.height= 5+'px';
               document.querySelector('.positive').style.height= 5+'px';
               
