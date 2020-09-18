@@ -894,9 +894,17 @@
     color: white;
     left: 31%;
 }
-
-
-
+.pop::after {
+   content: 'Drag here';
+     position: absolute;
+    top: -77%;
+    z-index: 4;
+    font-size: 10px;
+    transform: rotate(45deg) scale(1);
+    text-shadow: 0px 0px 4px black;
+    color: white;
+    left: -24%;
+}
    
     </style>	
    
@@ -1033,7 +1041,17 @@
      <label class='A1' for='number'>Q<sub>Actual  :</sub></label>  <input type='number' name='number' class='actual' value="" disabled="true">
 
     <label class='M1' for='number'>Q<sub>Measured  :</sub></label> <input type='number' name='number' class='measure' value="" disabled="true">
-
+   
+	     <p class="pop" style="
+    position: absolute;
+    top: -6%;
+    left: 35%;
+    transform: rotate(-52.5deg) scale(2.5);
+    width: 10vh;
+    color: white;
+    z-index: 4;
+"> ↓</p>
+	     
  <script type='text/javascript'>
           
     var selected = null, // Object of the element to be moved
