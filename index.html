@@ -1,0 +1,286 @@
+ <html>
+   
+   <head>
+    
+    <title>LCR-Q-Meter</title>
+    
+    <meta set="UTF-8">
+
+        <script src="js/balance.js"></script>
+     
+        <script src="js/index.js"></script>
+
+      <link rel="stylesheet" href="css/index.css">
+     
+     <meta name="viewport" content="width=device-width, initial-scale=0">
+    
+    </head>
+
+<body>
+       <canvas id='balance' width="600px" height="600px"> 
+       </canvas> 
+       
+       <input class='Z1' type='range' min="0" max='500' oninput="change1(this.value);"  value="0" required>
+       
+       <input class='Z2' type='range' min="0" max='500' oninput="change2(this.value);"  value="0" required>
+       
+       <input class='Z3' type='range' min="0" max='500' oninput="change3(this.value);"  value="0" required>
+
+       <i class='alert'></i>
+       
+       <input class='R4' type='range' min="0" max="500" step='1' value="0" pop-up-enabled='true' data-show-value='true' oninput="change(this.value);">
+
+ <p class='display'> Select variable</p>
+
+<p class='display display1'> Adjust variable</p>
+
+   
+  
+       <select name='adjust' onchange='selectElem(this.value);' class='adjust'>
+
+   
+       <option  class='opt4' value='Z4'>Z4</option>
+       <option class='opt1' value='Z1'>Z1</option>
+       <option class='opt2' value='Z2'>Z2</option>
+       <option class='opt3' value='Z3'>Z3</option>
+       
+       </select>
+
+       <span class='imp imp1'>Z1</span>
+       <span class='imp imp2'>Z2</span>
+       <span class='imp imp3'>Z3</span>
+       
+
+       <span class='range range4'>0</span>
+       <span class='range range2'>0</span>
+       <span class='range range3'>0</span>
+       <span class='range range1'>0</span>
+
+      <div class='led'></div>
+      
+      <button class='reset' onclick='reset();'>Reset</button>
+   
+      <ul class='arr' style='list-style-type:none'>
+
+      <li class='arr1'>&#8250</li> 
+      <li class='arr2'>&#8250</li>
+      <li class='arr3'>&#8250</li>
+      <li class='arr4'>&#8250</li>
+      <li class='arr5'>&#8250</li>
+      <li class='arr6'>&#8250</li>
+      <li class='arr7'>&#8250</li>
+      <li class='arr8'>&#8250</li>
+      <li class='arr9'>&#8250</li>
+      <li class='arr10'>&#8250</li>
+      <li class='current' style='font-size: 7px;top: 32%;
+    color: white;
+    left: 14%;'></li>
+
+      </ul> 
+
+     <div class="Qformula" style="
+    position: absolute;
+    top: 76%;
+    left: 5%;
+    box-shadow: 0px 0px 30px 0px inset black;
+    padding: 20px;
+    text-shadow: -3px 1px 2px black;
+    background: cornflowerblue;
+    transform: scale(1.5);
+">
+      	
+      	<p style='font-size:20px; margin-bottom: 5px; color:white;'>
+      		Q = &#160<u>2 &#928 F L</u></p>
+          
+         <b style='font-size:20px; margin-left: 60%; color:white;'>R</b> 
+
+      </div>
+
+        <iframe class='main' src='Lcq.html'></iframe>
+  
+ 
+           
+       <script>
+
+
+            var lcq = document.getElementById("balance");
+
+            var balancing = lcq.getContext("2d");
+
+           setTimeout(function() {
+             
+            lcq.style.width='50%';
+             balancing.font = '28px Georgia';
+             balancing.fillStyle='white';
+            balancing.fillText('BALANCING OF LCR BRIDGE',90,30);
+
+     //--------------------Z1------------------------
+            
+            balancing.beginPath();
+            balancing.moveTo(160,67);
+            balancing.lineTo(127,98);
+
+
+   //------------- connected to AC from left------------------
+
+            balancing.moveTo(60,168);
+            balancing.lineTo(30,168);
+
+            balancing.moveTo(30,168);
+            balancing.lineTo(30,320);
+
+            balancing.moveTo(140,320);
+            balancing.lineTo(30,320);
+
+//-------------connected to AC from right----------------------
+           
+            balancing.moveTo(280,175);
+            balancing.lineTo(250,175);
+
+            balancing.moveTo(280,175);
+            balancing.lineTo(280,320);
+
+            balancing.moveTo(280,320);
+            balancing.lineTo(177,320);
+
+
+            balancing.restore();
+            balancing.lineWidth='1.5';
+            balancing.strokeStyle='white';
+            balancing.fill();
+
+            balancing.stroke();
+ ///----------------resistance 1---------------------     
+            balancing.beginPath();   
+            balancing.moveTo(127,98); 
+            balancing.lineTo(130,110); 
+            balancing.lineTo(110,105);
+            balancing.lineTo(125,120);
+            balancing.lineTo(105,115);
+            balancing.lineTo(115,130);
+            balancing.lineTo(95,125);
+            balancing.lineTo(100,140);
+
+            balancing.moveTo(100,140);
+            balancing.lineTo(60,170);
+            balancing.stroke();
+
+//------------- A  /  C ---------------------------
+
+ //-----------connected to circle-----------------------
+ 
+ //--------circle==------------------------
+
+            balancing.beginPath();
+            balancing.arc(160,320,18,0,Math.PI*2,true); 
+            balancing.stroke();  
+           
+           balancing.fillText('~',155,325);
+
+      //--------------------Z1------------------------  
+            balancing.beginPath();
+            balancing.moveTo(58,167);
+            balancing.lineTo(90,200);
+            balancing.restore();
+            balancing.lineWidth='1.5';
+            balancing.strokeStyle='white';
+            balancing.fill();
+            balancing.stroke();
+      // --------- Resistance--------------------------
+            balancing.beginPath();
+            balancing.moveTo(110,190); 
+            balancing.lineTo(88,200); 
+            balancing.moveTo(110,190);
+            balancing.lineTo(95,210); 
+            balancing.lineTo(120,200);
+            balancing.lineTo(105,225); 
+            balancing.lineTo(130,215); 
+            balancing.lineTo(117,230);  
+         
+            balancing.lineTo(160,280); 
+            balancing.lineTo(160,190); 
+         
+            balancing.stroke();
+          //--------circle==------------------------
+            balancing.beginPath();
+            balancing.arc(160,170,18,0,Math.PI*2,true); 
+            balancing.stroke();
+
+          //-----------connected to circle-----------------------
+            balancing.beginPath();
+            balancing.moveTo(160,67); 
+            balancing.lineTo(160,150);
+            balancing.stroke();
+          
+            balancing.fillStyle='darkgrey';
+            balancing.font='18px san-serif';
+            balancing.fillText('Z1',80,100);
+            balancing.fillText('Z2',230,100);
+            balancing.fillText('Z3',230,250);
+             balancing.fillText('Z4',80,240);
+            balancing.fillText('Impedance',300,180);
+            balancing.fillText('Impedance',300,240);
+            balancing.fillText('Impedance',300,295);
+            balancing.fillText('Balanced   :',300,475);
+             balancing.fillText('when led Turned red',420,475);
+      
+
+            balancing.rotate((Math.PI/180)*50);
+            balancing.translate(-85,-110);        
+   
+           //----------Z2 top-------------------- 
+            balancing.beginPath();
+            balancing.moveTo(300,33);
+            balancing.lineTo(237,31);
+            balancing.moveTo(300,33);
+            balancing.lineTo(300,45);
+            balancing.lineTo(310,29);
+            balancing.lineTo(315,45);
+            balancing.lineTo(320,26);
+            balancing.lineTo(325,46);
+            balancing.lineTo(330,26);
+            balancing.lineTo(335,31);
+            balancing.lineTo(342,31);
+            balancing.stroke();
+           //-------------Z2 bottom-------------------
+
+            balancing.beginPath();
+            balancing.moveTo(380,30);
+            balancing.lineTo(340,30);
+            balancing.moveTo(383,30);
+            balancing.lineTo(390,72);
+            balancing.lineTo(383,80);
+           balancing.lineTo(400,80);
+            balancing.lineTo(387,90);
+             balancing.lineTo(407,92);
+             balancing.lineTo(390,100);
+             balancing.lineTo(406,100);
+             balancing.lineTo(394,110);
+             balancing.lineTo(395,128);
+             balancing.stroke();
+        
+             balancing.beginPath();
+            balancing.moveTo(395,124);
+            balancing.lineTo(402,167);
+
+           
+         //   balancing.moveTo(552,197);
+           // balancing.lineTo(582,197);
+            balancing.lineWidth='1.5';    
+           
+         //-------------Z 3 Box---------------
+
+           
+            balancing.stroke();
+            balancing.scale(1,1.8);
+         
+           }, 100);
+
+
+
+	  </script>
+
+
+   </body>
+
+   </html>
