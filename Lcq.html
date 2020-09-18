@@ -1119,13 +1119,25 @@ function framing(){
 
      var Qactual = rest;
         document.querySelector('.input').innerHTML = parseFloat(comp).toFixed(3);
-        document.querySelector('.C1').classList.add('glow');
          document.querySelector('.actual').style.display = 'block';
            document.querySelector('.measure').style.display = 'block'; 
              document.querySelector('.M1').style.display = 'block';
                document.querySelector('.A1').style.display = 'block';
       document.querySelector('.actual').value = parseFloat(qactual.toFixed(3));
       document.querySelector('.measure').value = parseFloat(qmeasure.toFixed(3));
+		
+        
+       if ( document.querySelector('.input').innerHTML < 1) {
+
+ document.querySelector('.c2').classList.add('glow');
+
+       }
+
+        if ( document.querySelector('.input').innerHTML  > 1) {
+        
+ document.querySelector('.c3').classList.add('glow');
+
+       }		
     });
 
     var induceL = document.querySelector('.co1');
@@ -1261,12 +1273,15 @@ function deletion() {
                document.querySelector('.input1').value='';
                   document.querySelector('.dim3').classList.remove('glow');
                   document.querySelector('.dim1').classList.remove('glow');
-           document.querySelector('.R1').classList.remove('glow');
+           document.querySelector('.r1').classList.remove('glow');
            document.querySelector('.dim6').classList.remove('glow');
             document.querySelector('.r2').classList.remove('glow');
+	 document.querySelector('.l2').classList.remove('glow');
             document.querySelector('.dim5').classList.remove('glow');
             document.querySelector('.dim4').classList.remove('glow');
            document.querySelector('.l3').classList.remove('glow');
+	document.querySelector('.c2').classList.remove('glow');
+	document.querySelector('.c3').classList.remove('glow');
             document.querySelector('.input3').value='';
        
 }
@@ -1290,6 +1305,26 @@ document.querySelector('.capacite').onmousedown = function () {
 
 document.onmousemove = move_elem;
 document.onmouseup = destroy;
+
+// for mobile
+document.querySelector('.resist').ontouchstart = function () {
+    drag_init(this);
+    return false;
+};
+
+document.querySelector('.induce').ontouchstart = function () {
+    drag_init(this);
+    return false;
+};
+
+document.querySelector('.capacite').ontouchstart = function () {
+    drag_init(this);
+    return false;
+};
+
+document.touchmove = move_elem;
+document.touchend = destroy;
+
 
 </script>
       </body>
