@@ -1078,7 +1078,7 @@ function framing(){
      var resistor = document.querySelector('.resist');
   
 
-     if ( conf == -305 && conf <= -300 && selected.classList.contains('induce') == true) {
+     if ( conf == -305 && selected.classList.contains('induce') == true) {
      
        selected.style.top = 60 + 'px';
        selected.style.transform='scale('+0.9+')'+'rotate('+22+'deg)';
@@ -1175,7 +1175,7 @@ if ( conf == -300 && selected.classList.contains('resist') == true ) {
 
 }
 
-if ( conf <= -300 && selected.classList.contains('capacite') == true ) {
+if ( conf == -300 && selected.classList.contains('capacite') == true ) {
 
 document.querySelector('.co1').innerHTML='';
 document.querySelector('.co2').innerHTML='';
