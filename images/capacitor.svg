@@ -1,0 +1,34 @@
+<svg width="440" height="580" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
+ <defs>
+  <pattern id="gridpattern" patternUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+   <image id="svg_2" x="0" y="0" width="100" height="100"/>
+  </pattern>
+  <pattern height="100" width="100" y="0" x="0" patternUnits="userSpaceOnUse" id="gridpattern">
+   <image height="100" width="100" y="0" x="0"/>
+  </pattern>
+  <linearGradient id="svg_1" x1="1" y1="0" x2="0" y2="0">
+   <stop stop-color="#333333" offset="0.06123"/>
+   <stop stop-color="#cccccc" offset="0.99482"/>
+  </linearGradient>
+  <linearGradient id="svg_7" x1="1" y1="0.08116" x2="0" y2="0">
+   <stop stop-color="#7f7f7f" offset="0"/>
+   <stop stop-color="#808080" offset="0.54563"/>
+   <stop stop-color="#808080" offset="0.655"/>
+   <stop stop-color="#808080" offset="0.655"/>
+   <stop stop-color="#808080" offset="0.77219"/>
+   <stop stop-color="#808080" offset="0.95578"/>
+  </linearGradient>
+  <linearGradient y2="0.02561" x2="0.05344" y1="0.65061" x1="0.61985" id="svg_10">
+   <stop offset="0" stop-color="#000000"/>
+   <stop offset="1" stop-color="#ffffff"/>
+  </linearGradient>
+ </defs>
+ <g stroke="null">
+  <title>Layer 1</title>
+  <rect stroke="url(#svg_1)" transform="rotate(-20 155.95518493652332,332.38659667968744) " id="svg_5" height="142.30831" width="6.275" y="261.23246" x="152.8177" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="2" fill="#555" stroke-opacity="0.64"/>
+  <rect stroke="#000000" transform="rotate(-34.65911102294922 115.84566497802707,347.1947937011718) " id="svg_6" height="137.80925" width="6.02779" y="278.29018" x="112.83177" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="url(#svg_7)" stroke-opacity="0.64"/>
+  <rect stroke="#000000" transform="rotate(61.11343002319336 174.97987365722656,412.9697570800781) " id="svg_11" height="53.48427" width="54.51541" y="386.22762" x="147.72216" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="null" stroke-width="0" fill="url(#svg_10)"/>
+  <rect stroke="#000000" id="svg_13" height="0" width="1" y="181.4" x="175.2" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#000000"/>
+ </g>
+</svg>
